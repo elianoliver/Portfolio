@@ -75,7 +75,7 @@ export function Hero() {
                     className="text-lg sm:text-xl text-foreground/80 mb-6 max-w-2xl mx-auto"
                 >
                     <p>
-                        Sou um desenvolvedor <span className="text-primary font-semibold">Full Stack</span> de 25 anos, formado em Bacharelado em Sistemas de Informação pelo Instituto Federal Catarinense de Camboriú. Sou apaixonado por tecnologia e sempre busco soluções inovadoras.
+                        Desenvolvedor <span className="text-primary font-semibold">Full Stack</span> apaixonado por transformar ideias em realidade. Com uma base sólida em <span className="text-primary font-semibold">Sistemas de Informação</span> pelo <span className="text-primary font-semibold">IFC Camboriú</span>, meu foco é construir aplicações robustas e experiências de usuário incríveis.
                     </p>
                 </motion.div>
 

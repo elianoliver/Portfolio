@@ -94,7 +94,14 @@ export function AnimatedBackground() {
             ))}
 
             {/* Grid Pattern */}
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808008_1px,transparent_1px),linear-gradient(to_bottom,#80808008_1px,transparent_1px)] bg-[size:24px_24px]" />
+            <div
+                className="absolute inset-0"
+                style={{
+                    backgroundImage:
+                        'linear-gradient(to right, rgba(209,213,219,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(209,213,219,0.015) 1px, transparent 1px)',
+                    backgroundSize: '24px 24px',
+                }}
+            />
         </div>
     );
 }
