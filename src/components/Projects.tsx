@@ -3,24 +3,27 @@ import { ExternalLink, Github } from "lucide-react";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "./ui/card";
 import { Badge } from "./ui/badge";
 import { Button } from "./ui/button";
+// IMAGES
+import megImage from '/public/meg.png';
+import ifcImage from '/public/ifc2.png';
 
 export function Projects() {
     const projects = [
         {
-            title: "E-Commerce Platform",
-            description: "Plataforma completa de e-commerce com carrinho de compras, sistema de pagamento e painel administrativo.",
-            image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=400&fit=crop",
-            technologies: ["React", "Node.js", "PostgreSQL", "Tailwind"],
-            github: "https://github.com",
-            demo: "https://example.com",
+            title: "Landing Page Comercial",
+            description: "Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.",
+            image: megImage,
+            technologies: ["React", "TypeScript", "Vite", "Tailwind", "EmailJS"],
+            github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
+            demo: "https://megsolucoeseletricas.com.br/",
         },
         {
-            title: "Task Management App",
-            description: "Aplicação de gerenciamento de tarefas com metodologia Kanban, permitindo organização de projetos e colaboração em equipe.",
-            image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=400&fit=crop",
-            technologies: ["Next.js", "Express.js", "PostgreSQL"],
-            github: "https://github.com",
-            demo: "https://example.com",
+            title: "App Desktop para Gestão de Multas",
+            description: "Sistema em PyQt6 para gestão de multas da biblioteca do IFC como TCC. Unifica relatórios Excel, exibe estatísticas e automatiza o envio de notificações.",
+            image: ifcImage,
+            technologies: ["Python", "PyQT6"],
+            github: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
+            demo: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
         },
         {
             title: "Weather Dashboard",
