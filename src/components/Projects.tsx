@@ -10,20 +10,20 @@ import ifcImage from '/public/ifc2.png';
 export function Projects() {
     const projects = [
         {
-            title: "Landing Page Comercial",
-            description: "Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.",
-            image: megImage,
-            technologies: ["React", "TypeScript", "Vite", "Tailwind", "EmailJS"],
-            github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
-            demo: "https://megsolucoeseletricas.com.br/",
-        },
-        {
             title: "App Desktop para Gestão de Multas",
             description: "Sistema em PyQt6 para gestão de multas da biblioteca do IFC como TCC. Unifica relatórios Excel, exibe estatísticas e automatiza o envio de notificações.",
             image: ifcImage,
             technologies: ["Python", "PyQT6"],
             github: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
             demo: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
+        },
+        {
+            title: "Landing Page Comercial",
+            description: "Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.",
+            image: megImage,
+            technologies: ["React", "TypeScript", "Vite", "Tailwind", "EmailJS"],
+            github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
+            demo: "https://megsolucoeseletricas.com.br/",
         },
         {
             title: "Weather Dashboard",
