@@ -98,7 +98,7 @@ export function AnimatedBackground() {
                 className="absolute inset-0"
                 style={{
                     backgroundImage:
-                        'linear-gradient(to right, rgba(209,213,219,0.015) 1px, transparent 1px), linear-gradient(to bottom, rgba(209,213,219,0.015) 1px, transparent 1px)',
+                        'linear-gradient(to right, rgba(209,213,219,0.04) 1px, transparent 1px), linear-gradient(to bottom, rgba(209,213,219,0.04) 1px, transparent 1px)',
                     backgroundSize: '24px 24px',
                 }}
             />
