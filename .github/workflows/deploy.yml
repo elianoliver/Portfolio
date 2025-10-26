@@ -1,0 +1,49 @@
+# Nome do seu workflow
+name: Deploy na Hostinger
+
+# Gatilho: Este workflow será executado em todo push para a branch 'main'
+on:
+    push:
+        branches:
+            - main # Mude para 'master' se for o seu caso
+
+# Tarefas (jobs) que o workflow irá executar
+jobs:
+    build-e-deploy:
+        # O tipo de máquina virtual para executar o job
+        runs-on: ubuntu-latest
+
+        # Passos sequenciais do job
+        steps:
+            # 1. Baixa o código do seu repositório
+            - name: Checkout do código
+              uses: actions/checkout@v4
+
+            # 2. Configura o ambiente Node.js
+            - name: Setup Node.js
+              uses: actions/setup-node@v4
+              with:
+                  node-version: "20" # Use a versão do Node compatível com seu projeto
+                  cache: "npm" # Habilita o cache para acelerar instalações futuras
+
+            # 3. Instala as dependências do projeto
+            - name: Instalar dependências
+              run: npm install
+
+            # 4. Gera a build de produção (cria a pasta 'dist')
+            - name: Build do projeto
+              run: npm run build
+
+            # 5. Envia os arquivos da pasta 'dist' para a Hostinger via FTP
+            - name: Deploy com FTP
+              uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+              with:
+                  server: ${{ secrets.FTP_SERVER }}
+                  username: ${{ secrets.FTP_USERNAME }}
+                  password: ${{ secrets.FTP_PASSWORD }}
+                  port: 21
+                  protocol: ftp
+                  local-dir: ./dist/
+                  server-dir: ./
+                  # Opção para limpar o diretório de destino antes do deploy
+                  dangerous-clean-slate: true
