@@ -24,23 +24,7 @@ export function Projects() {
             technologies: ["React", "TypeScript", "Vite", "Tailwind", "EmailJS"],
             github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
             demo: "https://megsolucoeseletricas.com.br/",
-        },
-        {
-            title: "Weather Dashboard",
-            description: "Dashboard interativo que exibe previsões meteorológicas com gráficos e estatísticas detalhadas.",
-            image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=400&fit=crop",
-            technologies: ["React", "API Integration", "Bootstrap"],
-            github: "https://github.com",
-            demo: "https://example.com",
-        },
-        {
-            title: "Portfolio CMS",
-            description: "Sistema de gerenciamento de conteúdo para portfólios, com editor WYSIWYG e customização de temas.",
-            image: "https://images.unsplash.com/photo-1467232004584-a241de8bcf5d?w=800&h=400&fit=crop",
-            technologies: ["Next.js", "Node.js", "Tailwind", "PostgreSQL"],
-            github: "https://github.com",
-            demo: "https://example.com",
-        },
+        }
     ];
 
     const container = {
@@ -70,7 +54,7 @@ export function Projects() {
                 >
                     <h2 className="text-3xl sm:text-4xl mb-4">Projetos</h2>
                     <p className="text-foreground/70 max-w-2xl mx-auto">
-                        Alguns dos projetos que desenvolvi utilizando diferentes tecnologias
+                        Alguns dos meus últimos projetos que desenvolvi utilizando diferentes tecnologias
                     </p>
                 </motion.div>
 

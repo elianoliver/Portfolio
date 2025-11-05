@@ -14,13 +14,13 @@ export function Contact() {
             icon: Phone,
             title: "Telefone",
             value: "+55 (47) 99921-7767",
-            href: "tel:+5547999217767",
+            href: "https://wa.me/5547999217767",
         },
         {
             icon: MapPin,
             title: "Localização",
             value: "Blumenau, SC - Brasil",
-            href: "#",
+            href: "#contact",
         },
     ];
 
@@ -66,6 +66,7 @@ export function Contact() {
                         <motion.div key={contact.title} variants={item}>
                             <motion.a
                                 href={contact.href}
+                                target={contact.href.includes('wa.me') ? '_blank' : undefined}
                                 whileHover={{ scale: 1.05, y: -5 }}
                                 whileTap={{ scale: 0.95 }}
                             >
