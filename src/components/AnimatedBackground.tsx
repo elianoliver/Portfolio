@@ -32,7 +32,7 @@ export function AnimatedBackground() {
         <div className="fixed inset-0 pointer-events-none overflow-hidden -z-10">
             {/* Gradient Orbs */}
             <motion.div
-                className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-3xl"
+                className="absolute -top-40 -right-40 w-80 h-80 bg-blue-500/20 dark:bg-blue-500/10 rounded-full blur-2xl md:blur-3xl will-change-transform will-change-opacity"
                 animate={{
                     scale: [1, 1.2, 1],
                     opacity: [0.3, 0.5, 0.3],
@@ -44,7 +44,7 @@ export function AnimatedBackground() {
                 }}
             />
             <motion.div
-                className="absolute top-1/3 -left-40 w-96 h-96 bg-purple-500/20 dark:bg-purple-500/10 rounded-full blur-3xl"
+                className="absolute top-1/3 -left-40 w-96 h-96 bg-purple-500/20 dark:bg-purple-500/10 rounded-full blur-2xl md:blur-3xl will-change-transform will-change-opacity"
                 animate={{
                     scale: [1, 1.3, 1],
                     opacity: [0.2, 0.4, 0.2],
@@ -56,7 +56,7 @@ export function AnimatedBackground() {
                 }}
             />
             <motion.div
-                className="absolute bottom-20 right-1/4 w-72 h-72 bg-cyan-500/20 dark:bg-cyan-500/10 rounded-full blur-3xl"
+                className="absolute bottom-20 right-1/4 w-72 h-72 bg-cyan-500/20 dark:bg-cyan-500/10 rounded-full blur-2xl md:blur-3xl will-change-transform will-change-opacity"
                 animate={{
                     scale: [1, 1.1, 1],
                     opacity: [0.25, 0.45, 0.25],
