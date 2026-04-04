@@ -1,6 +1,6 @@
-import { useState } from "react";
-import { Menu, X } from "lucide-react";
-import { motion, AnimatePresence } from "motion/react";
+import { Menu, X } from 'lucide-react';
+import { AnimatePresence, motion } from 'motion/react';
+import { useState } from 'react';
 
 const NAV_ITEMS = [
     { name: "Início", href: "#home" },
@@ -87,7 +87,7 @@ export function Navbar() {
                                             const y = el.getBoundingClientRect().top + window.scrollY - 64
                                             window.scrollTo({ top: y, behavior: "smooth" })
                                         }
-                                        setTimeout(() => setIsOpen(false), 500)
+                                        setTimeout(() => setIsOpen(false), 1000)
                                     }}
                                 >
                                     {item.name}
