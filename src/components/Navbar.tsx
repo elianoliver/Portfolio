@@ -71,7 +71,7 @@ export function Navbar() {
                         initial={{ opacity: 0, height: 0 }}
                         animate={{ opacity: 1, height: "auto" }}
                         exit={{ opacity: 0, height: 0 }}
-                        className="md:hidden bg-background border-b border-border"
+                        className="md:hidden bg-background border-b border-border overflow-hidden"
                     >
                         <div className="px-4 pt-2 pb-4 space-y-2">
                             {NAV_ITEMS.map((item) => (
@@ -79,7 +79,16 @@ export function Navbar() {
                                     key={item.name}
                                     href={item.href}
                                     className="block py-2 text-foreground/80 hover:text-foreground transition-colors"
-                                    onClick={() => setIsOpen(false)}
+                                    onClick={(e) => {
+                                        e.preventDefault()
+                                        const id = item.href.replace("#", "")
+                                        const el = document.getElementById(id)
+                                        if (el) {
+                                            const y = el.getBoundingClientRect().top + window.scrollY - 64
+                                            window.scrollTo({ top: y, behavior: "smooth" })
+                                        }
+                                        setTimeout(() => setIsOpen(false), 500)
+                                    }}
                                 >
                                     {item.name}
                                 </a>
