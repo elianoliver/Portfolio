@@ -6,27 +6,38 @@ import { Badge } from './ui/badge';
 import { Button } from './ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
 import ifcImage from '/public/ifc2.png';
+import cezarImage from '/public/cezarImage.png';
 import megImage from '/public/meg.png';
 
 const PROJECTS = [
     {
-        title: "App Desktop para Gestão de Multas",
+        title: 'App Desktop para Gestão de Multas',
         description:
-            "Sistema em PyQt6 para gestão de multas da biblioteca do IFC como TCC. Unifica relatórios Excel, exibe estatísticas e automatiza o envio de notificações.",
+            'Sistema em PyQt6 para gestão de multas da biblioteca do IFC como TCC. Unifica relatórios Excel, exibe estatísticas e automatiza o envio de notificações.',
         image: ifcImage,
-        technologies: ["Python", "PyQT6"],
-        github: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
-        demo: "https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC",
+        technologies: ['Python', 'PyQT6'],
+        github: 'https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC',
+        demo: 'https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC',
     },
     {
-        title: "Landing Page Comercial",
+        title: 'Cezar Funilaria e Pintura',
         description:
-            "Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.",
-        image: megImage,
-        technologies: ["React", "TypeScript", "Vite", "Tailwind", "EmailJS"],
-        github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
-        demo: "https://megsolucoeseletricas.com.br/",
+            'Landing page moderna e otimizada para conversão, desenvolvida com Angular e estilizada com Tailwind CSS.',
+        image: cezarImage,
+        technologies: ['Angular', 'TypeScript', 'Tailwind'],
+        github: 'https://github.com/elianoliver/Cezar_Funilaria_e_Pintura',
+        demo: 'https://plum-flamingo-170638.hostingersite.com/',
     },
+    {
+        title: 'Landing Page Comercial',
+        description:
+            'Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.',
+        image: megImage,
+        technologies: ['React', 'TypeScript', 'Vite', 'Tailwind', 'EmailJS'],
+        github: 'https://github.com/elianoliver/Meg-Solucoes-Eletricas',
+        demo: 'https://megsolucoeseletricas.com.br/',
+    },
+
 ] as const;
 
 const containerVariants = {
