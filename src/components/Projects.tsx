@@ -35,7 +35,7 @@ const PROJECTS = [
         image: megImage,
         technologies: ['React', 'TypeScript', 'Vite', 'Tailwind', 'EmailJS'],
         github: 'https://github.com/elianoliver/Meg-Solucoes-Eletricas',
-        demo: 'https://megsolucoeseletricas.com.br/',
+        demo: 'https://meg-solucoes-eletricas.vercel.app/',
     },
 
 ] as const;
