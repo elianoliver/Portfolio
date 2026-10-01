@@ -26,7 +26,7 @@ const PROJECTS = [
         image: cezarImage,
         technologies: ['Angular', 'TypeScript', 'Tailwind'],
         github: 'https://github.com/elianoliver/Cezar_Funilaria_e_Pintura',
-        demo: 'https://plum-flamingo-170638.hostingersite.com/',
+        demo: 'https://cezar-funilaria-e-pintura.vercel.app/',
     },
     {
         title: 'Landing Page Comercial',
