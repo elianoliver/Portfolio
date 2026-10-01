@@ -45,7 +45,7 @@ export const projects = [
     alt: "Página da MEG Soluções Elétricas com apresentação do profissional e chamada para orçamento",
     technologies: ["React", "TypeScript", "EmailJS"],
     github: "https://github.com/elianoliver/Meg-Solucoes-Eletricas",
-    demo: "https://megsolucoeseletricas.com.br/",
+    demo: "https://meg-solucoes-eletricas.vercel.app/",
     theme: "meg",
   },
 ] as const;
