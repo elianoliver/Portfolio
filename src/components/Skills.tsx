@@ -1,103 +1,94 @@
-import { Code, Database, GitBranch, Layers } from 'lucide-react';
-import { motion } from 'motion/react';
+import {
+  Code2,
+  Database,
+  GitBranch,
+  Layers3,
+  MapPin,
+  GraduationCap,
+} from "lucide-react";
+import { Reveal } from "./Reveal";
 
-import { Badge } from './ui/badge';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-
-const SKILL_CATEGORIES = [
-    {
-        title: "Desenvolvimento Web",
-        icon: Code,
-        skills: ["HTML", "CSS", "JavaScript", "React", "Next.js", "Tailwind", "Bootstrap"],
-        color: "text-blue-500",
-    },
-    {
-        title: "Backend",
-        icon: Database,
-        skills: ["Node.js", "PostgreSQL", "Express.js", "APIs REST"],
-        color: "text-green-500",
-    },
-    {
-        title: "Versionamento",
-        icon: GitBranch,
-        skills: ["Git", "GitHub", "Colaboração em Equipe"],
-        color: "text-orange-500",
-    },
-    {
-        title: "Metodologias Ágeis",
-        icon: Layers,
-        skills: ["Scrum", "Kanban", "Gestão de Projetos"],
-        color: "text-purple-500",
-    },
-] as const;
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.1 } },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    show: { opacity: 1, y: 0 },
-};
-
+const categories = [
+  {
+    title: "Frontend",
+    icon: Code2,
+    detail: "Interfaces que fazem sentido.",
+    skills: [
+      "React",
+      "TypeScript",
+      "JavaScript",
+      "HTML & CSS",
+      "Next.js",
+      "Tailwind",
+    ],
+  },
+  {
+    title: "Backend & dados",
+    icon: Database,
+    detail: "Estrutura por trás da experiência.",
+    skills: ["Node.js", "Express", "PostgreSQL", "APIs REST", "Python"],
+  },
+  {
+    title: "Ferramentas",
+    icon: GitBranch,
+    detail: "Do desenvolvimento à entrega.",
+    skills: ["Git", "GitHub", "Vite", "pnpm"],
+  },
+  {
+    title: "Forma de trabalhar",
+    icon: Layers3,
+    detail: "Clareza em cada etapa.",
+    skills: ["Scrum", "Kanban", "Colaboração", "Gestão de projetos"],
+  },
+];
 export function Skills() {
-    return (
-        <section id="skills" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="text-3xl sm:text-4xl mb-4">Competências</h2>
-                    <p className="text-foreground/70 max-w-2xl mx-auto mb-4">
-                        Tecnologias e metodologias que utilizo no desenvolvimento de soluções
-                    </p>
-                </motion.div>
-
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                >
-                    {SKILL_CATEGORIES.map((category) => (
-                        <motion.div key={category.title} variants={itemVariants}>
-                            <Card className="h-full hover:shadow-lg hover:shadow-primary/5 transition-all duration-300 border-2 hover:border-primary/20 group relative overflow-hidden">
-                                <div className="absolute inset-0 bg-gradient-to-br from-primary/5 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                <CardHeader>
-                                    <CardTitle className="flex items-center gap-3 relative z-10">
-                                        <motion.div
-                                            className={`${category.color} p-2 rounded-lg bg-secondary/50`}
-                                            whileHover={{ rotate: 360 }}
-                                            transition={{ duration: 0.6 }}
-                                        >
-                                            <category.icon size={28} />
-                                        </motion.div>
-                                        {category.title}
-                                    </CardTitle>
-                                </CardHeader>
-                                <CardContent className="relative z-10">
-                                    <div className="flex flex-wrap gap-2">
-                                        {category.skills.map((skill) => (
-                                            <Badge
-                                                key={skill}
-                                                variant="secondary"
-                                            >
-                                                {skill}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </motion.div>
+  return (
+    <section
+      id="skills"
+      className="section container about-section"
+      aria-labelledby="about-title"
+    >
+      <Reveal className="about-copy">
+        <div className="eyebrow section-kicker">02 / SOBRE & STACK</div>
+        <h2 id="about-title">
+          Curiosidade para criar.
+          <br />
+          <span className="muted-heading">Critério para construir.</span>
+        </h2>
+        <p>
+          Sou Elian, desenvolvedor Full Stack com formação em Sistemas de
+          Informação pelo IFC Camboriú.
+        </p>
+        <p>
+          Gosto de entender o problema, simplificar o caminho e construir
+          soluções que sejam tão boas de usar quanto de manter. Do visual à
+          lógica, cada detalhe faz parte da experiência.
+        </p>
+        <div className="about-meta">
+          <span>
+            <MapPin size={16} /> Blumenau, Santa Catarina
+          </span>
+          <span>
+            <GraduationCap size={17} /> Sistemas de Informação · IFC
+          </span>
+        </div>
+      </Reveal>
+      <div className="skills-grid">
+        {categories.map((category, index) => (
+          <Reveal key={category.title} delay={index * 0.06}>
+            <div className="skill-card glass">
+              <category.icon size={22} />
+              <h3>{category.title}</h3>
+              <p>{category.detail}</p>
+              <div className="skill-tags">
+                {category.skills.map((skill) => (
+                  <span key={skill}>{skill}</span>
+                ))}
+              </div>
             </div>
-        </section>
-    );
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  );
 }

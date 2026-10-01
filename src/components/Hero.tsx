@@ -1,137 +1,141 @@
-import { motion } from "motion/react";
-import { Github, Linkedin, Mail, Code2, Sparkles } from "lucide-react";
-import { Button } from "./ui/button";
+import {
+  ArrowDown,
+  ArrowUpRight,
+  Github,
+  Linkedin,
+  Code2,
+  Layers3,
+  Command,
+} from "lucide-react";
+import { Reveal } from "./Reveal";
 
 export function Hero() {
-    return (
-        <section
-            id="home"
-            className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden"
-        >
-            {/* Decorative Elements */}
-            <motion.div
-                className="absolute top-20 left-10 text-primary/10"
-                animate={{
-                    y: [0, 20, 0],
-                    rotate: [0, 10, 0],
-                }}
-                transition={{
-                    duration: 5,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
+  return (
+    <section id="home" className="hero container">
+      <div className="hero-copy">
+        <Reveal>
+          <div className="eyebrow">
+            <span className="status-dot" /> DESENVOLVEDOR FULL STACK
+          </div>
+        </Reveal>
+        <Reveal delay={0.08}>
+          <h1>
+            Boas ideias.
+            <br />
+            Código preciso.
+            <br />
+            <span className="gradient-text">Experiências reais.</span>
+          </h1>
+        </Reveal>
+        <Reveal delay={0.16}>
+          <p className="hero-intro">
+            Sou <strong>Elian Oliveira.</strong> Conecto design e
+            desenvolvimento para transformar ideias em experiências digitais
+            simples, bonitas e funcionais.
+          </p>
+        </Reveal>
+        <Reveal delay={0.24}>
+          <div className="hero-actions">
+            <a className="button button-primary" href="#projects">
+              Explorar projetos <ArrowDown size={17} />
+            </a>
+            <a className="button button-secondary" href="#contact">
+              Vamos conversar <ArrowUpRight size={17} />
+            </a>
+          </div>
+        </Reveal>
+        <Reveal delay={0.32}>
+          <div className="hero-social">
+            <a
+              href="https://github.com/elianoliver"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="GitHub de Elian Oliveira"
             >
-                <Code2 size={60} />
-            </motion.div>
-            <motion.div
-                className="absolute bottom-20 right-10 text-primary/10"
-                animate={{
-                    y: [0, -20, 0],
-                    rotate: [0, -10, 0],
-                }}
-                transition={{
-                    duration: 6,
-                    repeat: Infinity,
-                    ease: "easeInOut",
-                }}
+              <Github size={19} />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/elian-oliveira/"
+              target="_blank"
+              rel="noreferrer"
+              aria-label="LinkedIn de Elian Oliveira"
             >
-                <Sparkles size={50} />
-            </motion.div>
-
-            <div className="max-w-4xl mx-auto text-center relative z-10">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6 }}
-                >
-                    <motion.div
-                        className="inline-block mb-6"
-                        initial={{ opacity: 0, scale: 0.5 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.5, delay: 0.1 }}
-                    >
-                        <div className="relative">
-                            <div className="absolute inset-0 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full blur-xl opacity-50 animate-pulse" />
-                            <div className="relative bg-gradient-to-r from-blue-500 to-purple-500 text-white px-6 py-2 rounded-full text-sm">
-                                Full Stack Developer
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.h1
-                        className="text-4xl sm:text-5xl md:text-6xl mb-4 bg-gradient-to-r from-foreground via-foreground to-foreground/70 bg-clip-text"
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                    >
-                        Olá! Eu sou Elian Oliveira 👋
-                    </motion.h1>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.3 }}
-                    className="text-lg sm:text-xl text-foreground/80 mb-6 max-w-2xl mx-auto"
-                >
-                    <p>
-                        Desenvolvedor <span className="text-primary font-semibold">Full Stack</span> apaixonado por transformar ideias em realidade. Com uma base sólida em <span className="text-primary font-semibold">Sistemas de Informação</span> pelo <span className="text-primary font-semibold">IFC Camboriú</span>, meu foco é construir aplicações robustas e experiências de usuário incríveis.
-                    </p>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    animate={{ opacity: 1, y: 0 }}
-                    transition={{ duration: 0.6, delay: 0.5 }}
-                    className="flex flex-wrap gap-4 justify-center items-center mb-8"
-                >
-                    <Button asChild size="lg">
-                        <a href="#projects">Ver Projetos</a>
-                    </Button>
-                    <Button asChild variant="outline" size="lg">
-                        <a href="#contact">Entrar em Contato</a>
-                    </Button>
-                </motion.div>
-
-                <motion.div
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: 1 }}
-                    transition={{ duration: 0.6, delay: 0.7 }}
-                    className="flex gap-4 justify-center"
-                >
-                    <motion.a
-                        href="https://github.com/elianoliver"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative p-3 rounded-full bg-secondary hover:bg-accent transition-colors group"
-                        whileHover={{ scale: 1.1, y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-purple-500 opacity-0 group-hover:opacity-20 transition-opacity" />
-                        <Github size={24} className="relative z-10" />
-                    </motion.a>
-                    <motion.a
-                        href="https://www.linkedin.com/in/elian-oliveira/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="relative p-3 rounded-full bg-secondary hover:bg-accent transition-colors group"
-                        whileHover={{ scale: 1.1, y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-500 to-cyan-500 opacity-0 group-hover:opacity-20 transition-opacity" />
-                        <Linkedin size={24} className="relative z-10" />
-                    </motion.a>
-                    <motion.a
-                        href="mailto:elian.dev@proton.me"
-                        className="relative p-3 rounded-full bg-secondary hover:bg-accent transition-colors group"
-                        whileHover={{ scale: 1.1, y: -5 }}
-                        whileTap={{ scale: 0.95 }}
-                    >
-                        <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-500 to-pink-500 opacity-0 group-hover:opacity-20 transition-opacity" />
-                        <Mail size={24} className="relative z-10" />
-                    </motion.a>
-                </motion.div>
+              <Linkedin size={19} />
+            </a>
+            <span className="social-divider" />
+            <span>Blumenau, SC · Brasil</span>
+          </div>
+        </Reveal>
+      </div>
+      <Reveal className="hero-art" delay={0.22}>
+        <div className="orbital-scene" aria-hidden="true">
+          <div className="orbit orbit-one" />
+          <div className="orbit orbit-two" />
+          <div className="glass-sheet sheet-back" />
+          <div className="glass-sheet sheet-middle" />
+          <div className="code-window glass">
+            <div className="window-toolbar">
+              <div className="window-dots">
+                <i />
+                <i />
+                <i />
+              </div>
+              <span>ideas.tsx</span>
+              <Code2 size={14} />
             </div>
-        </section>
-    );
+            <div className="code-content">
+              <span className="code-comment">// Da ideia à experiência.</span>
+              <p>
+                <span className="code-purple">const</span> developer = {"{"}
+              </p>
+              <div className="code-indent">
+                <p>
+                  name: <span className="code-green">'Elian Oliveira'</span>,
+                </p>
+                <p>
+                  focus: <span className="code-green">'Full Stack'</span>,
+                </p>
+                <p>
+                  craft: [<span className="code-blue">'design'</span>,{" "}
+                  <span className="code-blue">'code'</span>],
+                </p>
+                <p>
+                  details: <span className="code-purple">true</span>
+                </p>
+              </div>
+              <p>{"}"};</p>
+              <p className="code-last">
+                build<span className="code-blue">(</span>ideas
+                <span className="code-blue">)</span>
+                <span className="cursor">▎</span>
+              </p>
+            </div>
+            <div className="window-status">
+              <span>
+                <span className="status-dot" /> Feito para funcionar.
+              </span>
+              <span>UTF-8</span>
+            </div>
+          </div>
+          <div className="floating-tag tag-react glass">
+            <Layers3 size={20} />
+            <div>
+              Interfaces com intenção<span>React + TypeScript</span>
+            </div>
+          </div>
+          <div className="floating-tag tag-craft glass">
+            <Command size={18} />
+            <span>Cuidado em cada detalhe</span>
+            <span className="tiny-spark">✦</span>
+          </div>
+        </div>
+      </Reveal>
+      <div className="hero-bottom">
+        <span>DESIGN COM PROPÓSITO. CÓDIGO COM CUIDADO.</span>
+        <a href="#projects">
+          Conheça meu trabalho <ArrowDown size={14} />
+        </a>
+      </div>
+    </section>
+  );
 }

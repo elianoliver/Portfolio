@@ -1,150 +1,114 @@
-import { ExternalLink, Github } from 'lucide-react';
-import { motion } from 'motion/react';
-
-import { ImageWithFallback } from './figma/ImageWithFallback';
-import { Badge } from './ui/badge';
-import { Button } from './ui/button';
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from './ui/card';
-import ifcImage from '/public/ifc2.png';
-import cezarImage from '/public/cezarImage.png';
-import megImage from '/public/meg.png';
-
-const PROJECTS = [
-    {
-        title: 'App Desktop para Gestão de Multas',
-        description:
-            'Sistema em PyQt6 para gestão de multas da biblioteca do IFC como TCC. Unifica relatórios Excel, exibe estatísticas e automatiza o envio de notificações.',
-        image: ifcImage,
-        technologies: ['Python', 'PyQT6'],
-        github: 'https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC',
-        demo: 'https://github.com/elianoliver/Sistema-de-Cobranca-da-Biblioteca-IFC',
-    },
-    {
-        title: 'Cezar Funilaria e Pintura',
-        description:
-            'Landing page moderna e otimizada para conversão, desenvolvida com Angular e estilizada com Tailwind CSS.',
-        image: cezarImage,
-        technologies: ['Angular', 'TypeScript', 'Tailwind'],
-        github: 'https://github.com/elianoliver/Cezar_Funilaria_e_Pintura',
-        demo: 'https://cezar-funilaria-e-pintura.vercel.app/',
-    },
-    {
-        title: 'Landing Page Comercial',
-        description:
-            'Um site profissional moderno para a divulgação de serviços elétricos da empresa Meg Soluções Elétricas.',
-        image: megImage,
-        technologies: ['React', 'TypeScript', 'Vite', 'Tailwind', 'EmailJS'],
-        github: 'https://github.com/elianoliver/Meg-Solucoes-Eletricas',
-        demo: 'https://meg-solucoes-eletricas.vercel.app/',
-    },
-
-] as const;
-
-const containerVariants = {
-    hidden: { opacity: 0 },
-    show: { opacity: 1, transition: { staggerChildren: 0.15 } },
-};
-
-const itemVariants = {
-    hidden: { opacity: 0, y: 30 },
-    show: { opacity: 1, y: 0 },
-};
+import { ArrowUpRight, Github } from "lucide-react";
+import { Reveal } from "./Reveal";
+import { projects } from "../data/projects";
 
 export function Projects() {
-    return (
-        <section id="projects" className="min-h-screen py-20 px-4 sm:px-6 lg:px-8 bg-secondary/30">
-            <div className="max-w-7xl mx-auto">
-                <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.6 }}
-                    className="text-center mb-12"
-                >
-                    <h2 className="text-3xl sm:text-4xl mb-4">Projetos</h2>
-                    <p className="text-foreground/70 max-w-2xl mx-auto mb-4">
-                        Alguns dos meus últimos projetos que desenvolvi utilizando diferentes tecnologias
-                    </p>
-                </motion.div>
-
-                <motion.div
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true }}
-                    className="grid grid-cols-1 md:grid-cols-2 gap-6"
-                >
-                    {PROJECTS.map((project) => (
-                        <motion.div
-                            key={project.title}
-                            variants={itemVariants}
-                            className="flex flex-col"
-                        >
-                            <Card className="h-full flex flex-col overflow-hidden hover:shadow-xl hover:shadow-primary/10 transition-all duration-300 border-2 hover:border-primary/30 group">
-                                <div className="overflow-hidden relative">
-                                    <ImageWithFallback
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-48 object-cover"
-                                        loading="lazy"
-                                        decoding="async"
-                                        width={400}
-                                        height={192}
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                                </div>
-                                <CardHeader>
-                                    <CardTitle className="group-hover:text-primary transition-colors">
-                                        {project.title}
-                                    </CardTitle>
-                                    <CardDescription>{project.description}</CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex-grow">
-                                    <div className="flex flex-wrap gap-2">
-                                        {project.technologies.map((tech) => (
-                                            <Badge
-                                                key={tech}
-                                                variant="outline"
-                                                className="hover:bg-primary/10 transition-colors"
-                                            >
-                                                {tech}
-                                            </Badge>
-                                        ))}
-                                    </div>
-                                </CardContent>
-                                <CardFooter className="gap-2">
-                                    <div className="flex-1">
-                                        <Button asChild variant="outline" size="sm" className="w-full">
-                                            <a
-                                                href={project.github}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <Github size={16} />
-                                                Código
-                                            </a>
-                                        </Button>
-                                    </div>
-                                    <div className="flex-1">
-                                        <Button asChild size="sm" className="w-full">
-                                            <a
-                                                href={project.demo}
-                                                target="_blank"
-                                                rel="noopener noreferrer"
-                                                className="flex items-center gap-2"
-                                            >
-                                                <ExternalLink size={16} />
-                                                Demo
-                                            </a>
-                                        </Button>
-                                    </div>
-                                </CardFooter>
-                            </Card>
-                        </motion.div>
-                    ))}
-                </motion.div>
+  return (
+    <section
+      id="projects"
+      className="projects section container"
+      aria-labelledby="projects-title"
+    >
+      <Reveal>
+        <div className="section-heading">
+          <div>
+            <div className="eyebrow section-kicker">
+              01 / TRABALHOS SELECIONADOS
             </div>
-        </section>
-    );
+            <h2 id="projects-title">
+              Ideias que ganharam forma<span>.</span>
+            </h2>
+          </div>
+          <p>
+            Do primeiro conceito ao último detalhe.
+            <br />
+            Uma seleção do que venho construindo.
+          </p>
+        </div>
+      </Reveal>
+      <div className="project-grid">
+        {projects.map((project, index) => (
+          <Reveal
+            key={project.title}
+            className={index === 0 ? "featured-wrap" : ""}
+            delay={index === 0 ? 0 : (index - 1) * 0.08}
+          >
+            <article
+              className={`project-card glass ${index === 0 ? "featured" : ""}`}
+            >
+              <a
+                className={`project-visual ${project.theme}`}
+                href={project.demo ?? project.github}
+                target="_blank"
+                rel="noreferrer"
+                aria-label={`${project.demo ? "Visitar" : "Ver repositório de"} ${project.title} (nova aba)`}
+              >
+                {index === 0 && (
+                  <span className="feature-label">
+                    <span className="status-dot" /> EM DESTAQUE
+                  </span>
+                )}
+                <div className="browser-frame">
+                  <div className="browser-bar">
+                    <div className="window-dots">
+                      <i />
+                      <i />
+                      <i />
+                    </div>
+                    <span>
+                      {project.demo
+                        ? new URL(project.demo).hostname
+                        : "Biblioteca IFC · Desktop"}
+                    </span>
+                  </div>
+                  <img
+                    src={project.image}
+                    alt={project.alt}
+                    width="1440"
+                    height="1000"
+                    loading="lazy"
+                    decoding="async"
+                  />
+                </div>
+                <span className="image-link">
+                  <ArrowUpRight size={19} />
+                </span>
+              </a>
+              <div className="project-body">
+                <div className="project-category">{project.category}</div>
+                <h3>{project.title}</h3>
+                <p>{project.description}</p>
+                <div className="tags">
+                  {project.technologies.map((tech) => (
+                    <span key={tech}>{tech}</span>
+                  ))}
+                </div>
+                <div className="project-links">
+                  {project.demo && (
+                    <a href={project.demo} target="_blank" rel="noreferrer">
+                      Visitar projeto <ArrowUpRight size={16} />
+                    </a>
+                  )}
+                  <a href={project.github} target="_blank" rel="noreferrer">
+                    <Github size={16} />
+                    {project.demo ? "Código" : "Ver no GitHub"}
+                  </a>
+                </div>
+              </div>
+            </article>
+          </Reveal>
+        ))}
+      </div>
+      <Reveal>
+        <a
+          className="all-projects"
+          href="https://github.com/elianoliver?tab=repositories"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Mais ideias e código no GitHub <ArrowUpRight size={16} />
+        </a>
+      </Reveal>
+    </section>
+  );
 }
